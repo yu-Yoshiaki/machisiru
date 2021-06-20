@@ -10,6 +10,9 @@ module.exports = {
       minWidth: {
         "1/3": "30%",
       },
+      width: {
+        "3/10": "30%",
+      },
     },
   },
   variants: { extend: {} },
