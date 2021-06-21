@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import Image from "next/image";
 import type { VFC } from "react";
 import { Layout } from "src/components/layout";
 
@@ -9,11 +10,14 @@ const result = greeting.replace("\n", "<br/>");
 const About: VFC = () => {
   return (
     <Layout>
-      <div id="top" className="h-full text-center text-white bg-blue-300">
-        <h1 className="py-32">
-          僕らの知らない<strong>日本</strong>がここにある
-        </h1>
-        <p className="px-5 md:mx-auto md:w-2/3 text-left" dangerouslySetInnerHTML={{ __html: result }}></p>
+      <div id="top" className="relative text-center text-white bg-black">
+        <Image src="/street.jpg" width={1000} height={700} className="" />
+        <div className="absolute top-0 left-0 px-96">
+          <h1 className="p-8 text-2xl">
+            僕らの知らない<strong>日本</strong>がここにある
+          </h1>
+          <p className="md:mx-auto md:w-2/3 text-left " dangerouslySetInnerHTML={{ __html: result }}></p>
+        </div>
       </div>
     </Layout>
   );

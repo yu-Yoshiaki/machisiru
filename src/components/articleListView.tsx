@@ -1,22 +1,17 @@
 import Link from "next/link";
 import type { VFC } from "react";
 import { ArticleListTabView } from "src/components/articleListTabView";
+import type { MicroCMSContent } from "src/pages";
 
-type Article = {
-  image: string;
-  title: string;
-  id: number;
-}[];
-
-export const ArticleListView: VFC<{ items: Article }> = (props) => {
+export const ArticleListView: VFC<{ items: MicroCMSContent[] }> = (props) => {
   return (
-    <div className="my-3 mx-2">
+    <div className="p-10 my-3">
       {props.items.map((item) => {
         return (
           // eslint-disable-next-line react/jsx-key
           <Link href={`/news/${item.id}`}>
-            <a className="">
-              <ArticleListTabView image={item.image} title={item.title} />
+            <a>
+              <ArticleListTabView image="/sea.jpg" title={item.mainTitle} />
             </a>
           </Link>
         );
