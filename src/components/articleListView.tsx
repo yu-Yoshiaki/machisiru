@@ -5,7 +5,7 @@ import type { MicroCMSContent } from "src/pages";
 
 export const ArticleListView: VFC<{ items: MicroCMSContent[] }> = (props) => {
   return (
-    <div className="p-10 my-3">
+    <div className="p-10 ">
       {props.items.map((item) => {
         return (
           // eslint-disable-next-line react/jsx-key

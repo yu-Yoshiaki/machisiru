@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const datas: Datas<MicroCMSContent> = await client.get({
     endpoint: "blog",
   });
-  console.log(datas);
+  // console.log(datas);
 
   return {
     props: {
