@@ -9,8 +9,8 @@ type ArticleListTabView = {
 
 export const ArticleListTabView: VFC<ArticleListTabView> = (props) => {
   return (
-    <div className="md:inline-block relative pb-5 mx-5 mb-3 hover:bg-white md:w-3/10">
-      <Image src={props.image} width={500} height={300} className="rounded-md shadow-lg" alt="No Image" />
+    <div className="md:inline-block relative pb-5 md:mx-5 mb-3 md:w-3/10 hover:bg-gray-100 rounded-md">
+      <Image src={props.image} width={600} height={300} className="rounded-md" alt="No Image" />
       {/* <h1 className="absolute top-1 left-2 text-lg text-white" id="title">
         <strong>サムネイルメッセージ</strong>
       </h1> */}

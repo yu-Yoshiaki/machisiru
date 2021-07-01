@@ -11,12 +11,23 @@ const About: VFC = () => {
   return (
     <Layout>
       <div id="top" className="relative text-center text-white bg-black">
-        <Image src="/street.jpg" width={1000} height={700} className="" />
-        <div className="absolute top-0 left-0 px-96">
+        <Image src="/street.jpg" width={500} height={1000} layout={"intrinsic"} />
+        <div className="absolute top-0 left-0 px-5" id="message">
           <h1 className="p-8 text-2xl">
-            僕らの知らない<strong>日本</strong>がここにある
+            cd 僕らの知らない<strong>日本</strong>がここにある
           </h1>
           <p className="md:mx-auto md:w-2/3 text-left " dangerouslySetInnerHTML={{ __html: result }}></p>
+        </div>
+        <div id="profile">
+          <Image
+            src="/torii.jpg"
+            width={200}
+            height={200}
+            layout={"intrinsic"}
+            className="m-1 rounded-full ring-2 ring-white"
+          />
+          <p>YOSHIAKI</p>
+          <p>1992年生まれ。kazukazu</p>
         </div>
       </div>
     </Layout>

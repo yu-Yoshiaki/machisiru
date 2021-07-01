@@ -4,9 +4,9 @@ import { Header } from "src/components/header";
 
 export const Layout: VFC<{ children: ReactNode }> = (props) => {
   return (
-    <div className="grid grid-rows-[auto,1fr,auto] min-h-screen">
+    <div>
       <Header />
-      <main className="mt-32 min-h-screen font-bold bg-gray-100">{props.children}</main>
+      <main className="min-h-screen font-bold">{props.children}</main>
       <Footer />
     </div>
   );
