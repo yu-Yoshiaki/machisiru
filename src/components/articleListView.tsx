@@ -7,11 +7,13 @@ export const ArticleListView: VFC<{ items: MicroCMSContent[] }> = (props) => {
   return (
     <div className="p-10 ">
       {props.items.map((item) => {
+        const title = item.mainTitle;
+        const topImageURL = item.images ? item.images[0].image.url : "/snow.jpg";
         return (
           // eslint-disable-next-line react/jsx-key
           <Link href={`/news/${item.id}`}>
             <a>
-              <ArticleListTabView image="/sea.jpg" title={item.mainTitle} />
+              <ArticleListTabView image={topImageURL} title={title} />
             </a>
           </Link>
         );

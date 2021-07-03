@@ -5,6 +5,6 @@ module.exports = {
   typescript: { ignoreDevErrors: true },
   poweredByHeader: false,
   images: {
-    domains: ["mytwitter.microcms.io"],
+    domains: ["mytwitter.microcms.io", "images.microcms-assets.io"],
   },
 };
