@@ -1,11 +1,24 @@
 import Link from "next/link";
 import type { VFC } from "react";
+// import { useState } from "react";
 
 const items = [
   { href: "/", label: "HOME" },
   { href: "/about", label: "ABOUT" },
-  // { href: "/shop", label: "SHOP" },
 ];
+
+// const smartPhoneMenu = (
+//   <nav>
+//     <ul>
+//       <li>
+//         <a href="/">HOME</a>
+//       </li>
+//       <li>
+//         <a href="/about">ABOUT</a>
+//       </li>
+//     </ul>
+//   </nav>
+// );
 
 export const Header: VFC = () => {
   return (
