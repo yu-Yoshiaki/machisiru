@@ -1,4 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 import type { VFC } from "react";
 import { Article } from "src/components/article";
 import { Layout } from "src/components/layout";
@@ -10,18 +11,23 @@ const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
   const updatedAt = props.datas.updatedAt.substring(0, 10);
 
   return (
-    <Layout>
-      <div className="bg-gray-50">
-        <Article
-          image="/sea.jpg"
-          width={1000}
-          title={props.datas.mainTitle}
-          body={props.datas.bodys}
-          updatedAt={updatedAt}
-          author={author}
-        />
-      </div>
-    </Layout>
+    <>
+      <Head>
+        <title>{props.datas.mainTitle}</title>
+      </Head>
+      <Layout>
+        <div className="bg-gray-50">
+          <Article
+            image="/sea.jpg"
+            width={1000}
+            title={props.datas.mainTitle}
+            body={props.datas.bodys}
+            updatedAt={updatedAt}
+            author={author}
+          />
+        </div>
+      </Layout>
+    </>
   );
 };
 
