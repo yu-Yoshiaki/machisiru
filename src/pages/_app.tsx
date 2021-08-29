@@ -7,7 +7,7 @@ const App = (props: AppProps) => {
   return (
     <>
       <Head>
-        <title>MACHISIRU</title>
+        <title>YOSHIBLOG</title>
       </Head>
       <props.Component {...props.pageProps} />
     </>
