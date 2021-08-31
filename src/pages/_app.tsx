@@ -8,6 +8,7 @@ const App = (props: AppProps) => {
     <>
       <Head>
         <title>YOSHIBLOG</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
       </Head>
       <props.Component {...props.pageProps} />
     </>

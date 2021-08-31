@@ -5,7 +5,8 @@ import type { GetStaticProps } from "next";
 import type { VFC } from "react";
 import { ArticleListView } from "src/components/articleListView";
 import { Layout } from "src/components/layout";
-import { Topic } from "src/components/topic";
+import { Profile } from "src/components/profile";
+//import { Topic } from "src/components/topic";
 import { client } from "src/libs/microcms";
 
 export type Datas<T> = {
@@ -41,9 +42,6 @@ const News: VFC<{ datas: MicroCMSContent[] }> = (props) => {
     <Layout>
       {/* <Topic items={props.datas} /> */}
       <ArticleListView items={props.datas} /> {/* メインコンテンツ */}
-      <div id="Sidebar" className="bg-white">
-        sidebar
-      </div>
     </Layout>
   );
 };

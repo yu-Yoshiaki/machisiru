@@ -15,7 +15,14 @@ export const ArticleListTabView: VFC<ArticleListTabView> = (props) => {
       <h1 className="p-8 text-2xl font-bold text-center">{props.title}</h1>
       <h3 className="py-5 pr-5 text-right text-gray-600 text-md">更新日：2021-08-29</h3>
 
-      <Image src={props.image} width={600} height={350} alt="No Image" className="mx-auto bg-black" />
+      <Image
+        src={props.image}
+        width={350}
+        height={200}
+        layout={"responsive"}
+        alt="No Image"
+        className="mx-auto bg-black"
+      />
 
       <p className="p-10">
         WordPressテーマの「Manablog
