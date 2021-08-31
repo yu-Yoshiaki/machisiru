@@ -15,17 +15,16 @@ const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
       <Head>
         <title>{props.datas.mainTitle}</title>
       </Head>
+
       <Layout>
-        <div className="bg-gray-50">
-          <Article
-            image="/sea.jpg"
-            width={1000}
-            title={props.datas.mainTitle}
-            body={props.datas.bodys}
-            updatedAt={updatedAt}
-            author={author}
-          />
-        </div>
+        <Article
+          image="/sea.jpg"
+          width={1000}
+          title={props.datas.mainTitle}
+          body={props.datas.bodys}
+          updatedAt={updatedAt}
+          author={author}
+        />
       </Layout>
     </>
   );
