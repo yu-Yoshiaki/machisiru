@@ -4,11 +4,16 @@ import type { VFC } from "react";
 import { Article } from "src/components/article";
 import { Layout } from "src/components/layout";
 import { client } from "src/libs/microcms";
-import type { Datas, MicroCMSContent } from "src/pages";
+import type { MicroCMSContent } from "src/pages";
 
 const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
   const author = props.datas.author ? props.datas.author : "No Name";
   const updatedAt = props.datas.updatedAt.substring(0, 10);
+  // const Images = props.datas.bodys.map((body) => {
+  //   return body?.fieldId === "imageSlide";
+  // });
+
+  //console.log("------", Images);
 
   return (
     <>
@@ -19,9 +24,8 @@ const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
       <Layout>
         <Article
           image="/sea.jpg"
-          width={1000}
           title={props.datas.mainTitle}
-          body={props.datas.bodys}
+          bodys={props.datas.bodys}
           updatedAt={updatedAt}
           author={author}
         />
@@ -31,7 +35,7 @@ const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const datas: Datas<MicroCMSContent> = await client.get({
+  const datas: { contents: MicroCMSContent[] } = await client.get({
     endpoint: "blog",
   });
 

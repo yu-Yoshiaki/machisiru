@@ -12,9 +12,10 @@ module.exports = {
       },
       width: {
         "3/10": "30%",
+        "45%": "45%",
       },
     },
   },
   variants: { extend: {} },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
