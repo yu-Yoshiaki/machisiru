@@ -3,18 +3,35 @@
 /* eslint-disable no-console */
 import type { GetStaticProps } from "next";
 import type { VFC } from "react";
-import { ArticleListView } from "src/components/articleListView";
+import { ArticleList } from "src/components/articleList";
 import { Layout } from "src/components/layout";
 import { Profile } from "src/components/profile";
 //import { Topic } from "src/components/topic";
 import { client } from "src/libs/microcms";
 
-export type Datas<T> = {
-  contents: T[];
-  totalCount: number;
-  offset: number;
-  limit: number;
+//MicroCMS側の各フィールドに割り当てられた型
+type MicroCMSField = {
+  text: string;
+  textArea: string;
+  image: {
+    url: string;
+    height: number;
+    width: number;
+  };
 };
+
+//カスタムフィールド型
+type MicroCMSCustomField<T, U> = {
+  fieldId: T;
+} & Partial<U>;
+
+//各カスタムフィールドの型 --------------------------------------------------------------------------------------
+
+type ImageInSlide = MicroCMSCustomField<"imageInSlide", { image: MicroCMSField["image"]; imageInfo: string }>;
+type ImageSlide = MicroCMSCustomField<"imageSlide", ImageInSlide[]>;
+type RichText = MicroCMSCustomField<"richText", { text: string }>;
+
+//カスタムフィールド --------------------------------------------------------------------------------------
 
 export type MicroCMSContent = {
   id: string;
@@ -23,31 +40,21 @@ export type MicroCMSContent = {
   publishedAt: string;
   revisedAt: string;
   mainTitle: string;
-  bodys: string;
   author?: string;
-  images:
-    | {
-        fieldId: string;
-        image: {
-          url: string;
-          height: number;
-          width: number;
-        };
-      }[]
-    | null;
+  bodys: [];
 };
 
-const News: VFC<{ datas: MicroCMSContent[] }> = (props) => {
+const Index: VFC<{ datas: MicroCMSContent[] }> = (props) => {
   return (
     <Layout>
       {/* <Topic items={props.datas} /> */}
-      <ArticleListView items={props.datas} /> {/* メインコンテンツ */}
+      <ArticleList items={props.datas} /> {/* メインコンテンツ */}
     </Layout>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const datas: Datas<MicroCMSContent> = await client.get({
+  const datas: { contents: MicroCMSContent[] } = await client.get({
     endpoint: "blog",
   });
 
@@ -58,4 +65,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default News;
+export default Index;

@@ -1,26 +1,30 @@
+/* eslint-disable tailwindcss/no-custom-classname */
+/* eslint-disable react/jsx-handler-names */
 import Link from "next/link";
 import type { VFC } from "react";
-// import { useState } from "react";
 
 const items = [
   { href: "/", label: "HOME" },
-  { href: "/about", label: "ABOUT" },
+  { href: "/#", label: "TECH" },
+  { href: "/#", label: "MEDICAL" },
+  { href: "/#", label: "SPORT" },
+  { href: "/#", label: "CONTACT" },
 ];
 
 export const Header: VFC = () => {
   return (
-    <header className="w-full bg-white border-b border-gray-300">
-      <h1 className="w-full bg-white">
+    <header className="bg-white">
+      <h1 className="p-5 w-full text-2xl font-bold text-center">
         <Link href="/">
-          <a className="block p-5 text-xl font-bold hover:bg-blue-50">YOSHIBLOG</a>
+          <a>YOSHIBLOG</a>
         </Link>
       </h1>
 
-      <nav className="text-white bg-black">
+      <nav className="flex overflow-scroll md:overflow-auto fixed md:static bottom-0 z-10 md:flex-none w-full bg-white border-t border-blue-300 scrollbar-hide">
         {items.map(({ href, label }) => {
           return (
             <Link key={href} href={href}>
-              <a className="inline-block p-5 hover:bg-blue-50">{label}</a>
+              <a className="inline-block p-5 hover:text-black hover:bg-white">{label}</a>
             </Link>
           );
         })}
