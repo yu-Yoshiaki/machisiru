@@ -16,7 +16,7 @@ export const Header: VFC = () => {
     <header className="bg-white">
       <h1 className="p-5 w-full text-2xl font-bold text-center">
         <Link href="/">
-          <a>YOSHIBLOG</a>
+          <a>FIND NEXT</a>
         </Link>
       </h1>
 
