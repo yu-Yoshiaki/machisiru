@@ -7,7 +7,7 @@ const App = (props: AppProps) => {
   return (
     <>
       <Head>
-        <title>YOSHIBLOG</title>
+        <title>FIND NEXT</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
       </Head>
       <props.Component {...props.pageProps} />
