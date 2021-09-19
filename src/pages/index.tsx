@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
 import type { GetStaticProps } from "next";
+import Head from "next/head";
 import type { VFC } from "react";
 import { ArticleList } from "src/components/articleList";
 import { Layout } from "src/components/layout";
