@@ -36,7 +36,7 @@ import type { MicroCMSContent } from "src/pages";
 
 export const ArticleList: VFC<{ items: MicroCMSContent[] }> = (props) => {
   return (
-    <div className="flex flex-wrap justify-between md:justify-start items-start p-3 md:p-0">
+    <div className="flex flex-wrap justify-between md:justify-start items-start p-2 md:p-0">
       {props.items.map((item) => {
         // const topImageURL = item.bodys.map((body) => {
         //   return body.fieldId;
