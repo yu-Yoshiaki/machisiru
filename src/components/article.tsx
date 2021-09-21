@@ -13,9 +13,9 @@ type Article = {
 
 export const Article: VFC<Article> = (props) => {
   return (
-    <div className="pt-5 pb-10 md:mr-4 mb-7 bg-white">
-      <h1 className="p-8 text-2xl font-bold text-center">{props.title}</h1>
-      <h3 className="py-5 pr-5 text-right text-gray-600">{props.updatedAt}</h3>
+    <div className="px-2 md:px-0 pt-5 pb-10 md:mr-4 mb-7 bg-white">
+      <h1 className="md:p-8 text-xl md:text-2xl font-bold text-center">{props.title}</h1>
+      <p className="py-5 pr-5 text-right text-gray-600">{props.updatedAt}</p>
 
       <Image
         src={props.image}
@@ -28,7 +28,7 @@ export const Article: VFC<Article> = (props) => {
 
       {props.bodys.map(({ text }) => {
         // eslint-disable-next-line react/jsx-key
-        return <p className="p-10" dangerouslySetInnerHTML={{ __html: text }}></p>;
+        return <p className="p-1 md:p-10" dangerouslySetInnerHTML={{ __html: text }}></p>;
       })}
     </div>
   );
