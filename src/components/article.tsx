@@ -13,7 +13,7 @@ type Article = {
 
 export const Article: VFC<Article> = (props) => {
   return (
-    <div className="pt-5 pb-10 bg-white ">
+    <div className="pt-5 pb-10 md:mr-4 mb-7 bg-white">
       <h1 className="p-8 text-2xl font-bold text-center">{props.title}</h1>
       <h3 className="py-5 pr-5 text-right text-gray-600">{props.updatedAt}</h3>
 

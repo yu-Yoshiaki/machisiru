@@ -2,16 +2,20 @@
 /* eslint-disable react/jsx-handler-names */
 import Link from "next/link";
 import type { VFC } from "react";
+// import { useState } from "react";
 
 const items = [
   { href: "/", label: "HOME" },
-  { href: "/#", label: "TECH" },
-  { href: "/#", label: "MEDICAL" },
-  { href: "/#", label: "SPORT" },
-  { href: "/#", label: "CONTACT" },
+  { href: "/comingsoon", label: "TECH" },
+  { href: "/comingsoon", label: "MEDICAL" },
+  { href: "/comingsoon", label: "SPORT" },
+  { href: "/comingsoon", label: "CONTACT" },
 ];
 
 export const Header: VFC = () => {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  // const [menu, open] = useState(false);
+
   return (
     <header className="bg-white">
       <h1 className="p-5 w-full text-2xl font-bold text-center">
@@ -29,6 +33,17 @@ export const Header: VFC = () => {
           );
         })}
       </nav>
+
+      {/* <button
+        className="md:hidden fixed top-0 left-0 py-5 px-7 bg-red-200"
+        onClick={() => {
+          return open(!menu);
+        }}
+      >
+        -
+      </button>
+
+      {menu && <p>hello</p>} */}
     </header>
   );
 };
