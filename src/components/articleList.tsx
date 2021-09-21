@@ -46,7 +46,7 @@ export const ArticleList: VFC<{ items: MicroCMSContent[] }> = (props) => {
         //   ? item.images[0].image.url
         //   : "/snow.jpg";
         // eslint-disable-next-line react/jsx-key
-        return <ArticleTab image="/snow.jpg" title={item.mainTitle} url={item.id} />;
+        return <ArticleTab image="/snow.jpg" title={item.mainTitle} url={item.id} updatedAt={item.updatedAt} />;
       })}
     </div>
   );
