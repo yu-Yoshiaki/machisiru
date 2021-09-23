@@ -28,6 +28,7 @@ const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
           bodys={props.datas.bodys}
           updatedAt={updatedAt}
           author={author}
+          id={props.datas.id}
         />
       </Layout>
     </>
