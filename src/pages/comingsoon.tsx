@@ -4,7 +4,7 @@ import { Layout } from "src/components/layout";
 const Comingsoon: VFC = () => {
   return (
     <Layout>
-      <h1 className="font-bold text-center">Coming soon...</h1>
+      <p className="font-bold text-center">Coming soon...</p>
     </Layout>
   );
 };
