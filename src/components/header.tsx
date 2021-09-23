@@ -18,17 +18,20 @@ export const Header: VFC = () => {
 
   return (
     <header className="bg-white">
-      <h1 className="p-5 w-full text-2xl font-bold text-center">
+      <h1 className="pt-5 w-full text-3xl font-bold text-center">
         <Link href="/">
-          <a>FIND NEXT</a>
+          <a>
+            FIND <span className="text-red-500">NEXT</span>
+          </a>
         </Link>
       </h1>
+      <h2 className="w-full text-center">人生は楽しいの連続！新しい出会いがきっと見つかる</h2>
 
-      <nav className="flex overflow-scroll md:overflow-auto fixed md:static bottom-0 z-10 md:flex-none w-full bg-white border-t border-blue-300 md:border-none scrollbar-hide">
+      <nav className="flex overflow-scroll md:overflow-auto fixed md:static bottom-0 z-10 md:flex-none w-full bg-white border-t border-blue-300 md:border-none scrollbar-hide ">
         {items.map(({ href, label }) => {
           return (
             <Link key={href} href={href}>
-              <a className="inline-block p-5 hover:text-black hover:bg-white">{label}</a>
+              <a className="inline-block p-4 hover:text-red-300 hover:bg-white">{label}</a>
             </Link>
           );
         })}
