@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { VFC } from "react";
-import type { MicroCMSContent } from "src/pages";
+import type { MicroCMSContent } from "src/components/types";
 
 export const Topic: VFC<{ items: MicroCMSContent[] }> = (props) => {
   return (

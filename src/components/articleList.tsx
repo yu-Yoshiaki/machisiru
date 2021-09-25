@@ -1,6 +1,6 @@
 import type { VFC } from "react";
 import { ArticleTab } from "src/components/articleTab";
-import type { MicroCMSContent } from "src/pages";
+import type { MicroCMSContent } from "src/components/types";
 
 // const items = [
 //   { mainTitle: "hello", id: "1" },
