@@ -3,8 +3,8 @@ import Head from "next/head";
 import type { VFC } from "react";
 import { Article } from "src/components/article";
 import { Layout } from "src/components/layout";
+import type { MicroCMSContent } from "src/components/types";
 import { client } from "src/libs/microcms";
-import type { MicroCMSContent } from "src/pages";
 
 const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
   const author = props.datas.author ? props.datas.author : "No Name";
@@ -23,7 +23,6 @@ const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
 
       <Layout>
         <Article
-          image="/sea.jpg"
           title={props.datas.mainTitle}
           bodys={props.datas.bodys}
           updatedAt={updatedAt}
