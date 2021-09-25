@@ -19,7 +19,7 @@ type SocialProps = {
   via?: string;
 };
 
-export const ContentsStare: VFC<SocialProps> = (props) => {
+export const ContentsShare: VFC<SocialProps> = (props) => {
   const title = props.title + "- FIND NEXT";
   return (
     <div className="flex justify-around mt-8">

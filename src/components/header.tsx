@@ -25,7 +25,7 @@ export const Header: VFC = () => {
           </a>
         </Link>
       </h1>
-      <h2 className="md:p-0 px-2 pb-4 md:pb-0 w-full text-xs text-center md:text-md">
+      <h2 className="md:p-0 px-2 pb-4 md:pb-0 w-full text-sm text-center md:text-md">
         人生は楽しいの連続！新しい出会いがきっと見つかる
       </h2>
 
