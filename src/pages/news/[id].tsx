@@ -3,17 +3,13 @@ import Head from "next/head";
 import type { VFC } from "react";
 import { Article } from "src/components/article";
 import { Layout } from "src/components/layout";
+import { Pan } from "src/components/pan";
 import type { MicroCMSContent } from "src/components/types";
 import { client } from "src/libs/microcms";
 
 const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
   const author = props.datas.author ? props.datas.author : "No Name";
   const updatedAt = props.datas.updatedAt.substring(0, 10);
-  // const Images = props.datas.bodys.map((body) => {
-  //   return body?.fieldId === "imageSlide";
-  // });
-
-  //console.log("------", Images);
 
   return (
     <>
@@ -22,6 +18,7 @@ const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
       </Head>
 
       <Layout>
+        <Pan title={props.datas.mainTitle} />
         <Article
           title={props.datas.mainTitle}
           bodys={props.datas.bodys}
@@ -61,9 +58,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
   } else {
     return {
-      props: {
-        datas: "No Data",
-      },
+      notFound: true,
     };
   }
 };

@@ -38,15 +38,15 @@ export const ArticleList: VFC<{ items: MicroCMSContent[] }> = (props) => {
   return (
     <div className="flex flex-wrap justify-between md:justify-start items-start p-2 md:p-0">
       {props.items.map((item) => {
-        // const topImageURL = item.bodys.map((body) => {
-        //   return body.fieldId;
-        // });
-
-        // .fieldIdimages
-        //   ? item.images[0].image.url
-        //   : "/snow.jpg";
-        // eslint-disable-next-line react/jsx-key
-        return <ArticleTab image="/snow.jpg" title={item.mainTitle} url={item.id} updatedAt={item.updatedAt} />;
+        return (
+          <ArticleTab
+            key={item.id}
+            image="/torii.jpg"
+            title={item.mainTitle}
+            url={item.id}
+            updatedAt={item.updatedAt}
+          />
+        );
       })}
     </div>
   );

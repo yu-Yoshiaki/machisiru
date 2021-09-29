@@ -1,8 +1,6 @@
 /* eslint-disable tailwindcss/no-custom-classname */
-/* eslint-disable react/jsx-handler-names */
 import Link from "next/link";
 import type { VFC } from "react";
-// import { useState } from "react";
 
 const items = [
   { href: "/", label: "HOME" },
@@ -13,9 +11,6 @@ const items = [
 ];
 
 export const Header: VFC = () => {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  // const [menu, open] = useState(false);
-
   return (
     <header className="bg-white">
       <h1 className="pt-5 w-full text-3xl font-bold text-center">
@@ -25,8 +20,8 @@ export const Header: VFC = () => {
           </a>
         </Link>
       </h1>
-      <h2 className="md:p-0 px-2 pb-4 md:pb-0 w-full text-sm text-center md:text-md">
-        人生は楽しいの連続！新しい出会いがきっと見つかる
+      <h2 className="md:p-0 px-2 pb-4 md:pb-0 w-full text-sm md:text-base text-center">
+        楽しいが止まらない！新しい「次」を見つけよう！！
       </h2>
 
       <nav className="flex overflow-scroll md:overflow-auto fixed md:static bottom-0 z-10 md:flex-none w-full bg-white border-t border-blue-300 md:border-none scrollbar-hide ">
@@ -38,17 +33,6 @@ export const Header: VFC = () => {
           );
         })}
       </nav>
-
-      {/* <button
-        className="md:hidden fixed top-0 left-0 py-5 px-7 bg-red-200"
-        onClick={() => {
-          return open(!menu);
-        }}
-      >
-        -
-      </button>
-
-      {menu && <p>hello</p>} */}
     </header>
   );
 };
