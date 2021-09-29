@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import Image from "next/image";
 import Link from "next/link";
 import type { VFC } from "react";

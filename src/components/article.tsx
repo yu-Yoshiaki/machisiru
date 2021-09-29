@@ -1,11 +1,8 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable tailwindcss/no-custom-classname */
 /* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import type McCustomImage from "next/image";
 import type { VFC } from "react";
 import { ContentsShare } from "src/components/contentsShare";
 import { McImage } from "src/components/mc_image";
+import { Pragraph } from "src/components/paragraph";
 import { RichText } from "src/components/richtext";
 import type { MicroCMSField } from "src/components/types";
 
@@ -19,6 +16,9 @@ type Article = {
     text: MicroCMSField["richEditor"];
     image: MicroCMSField["image"];
     alt: MicroCMSField["text"];
+    htmlField: MicroCMSField["textArea"];
+    h2_title: MicroCMSField["text"];
+    h2_content: MicroCMSField["textArea"];
   }[];
 };
 
@@ -31,11 +31,13 @@ export const Article: VFC<Article> = (props) => {
       {props.bodys.map((body) => {
         return body.fieldId == "richText" ? (
           <RichText text={body.text} />
+        ) : body.fieldId == "image" ? (
+          <McImage image={body.image} alt={body.alt} />
         ) : (
-          body.fieldId == "image" && <McImage image={body.image} alt={body.alt} />
+          body.fieldId == "paragraph" && <Pragraph title={body.h2_title} content={body.h2_content} />
         );
       })}
-      <ContentsShare title={props.title} url={`https://findnext.news/news/${props.id}`} size={50} />
+      <ContentsShare title={props.bodys[0].text} url={`https://findnext.news/news/${props.id}`} size={50} />
     </div>
   );
 };
