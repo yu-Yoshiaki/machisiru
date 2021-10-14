@@ -1,33 +1,21 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
 import type { VFC } from "react";
-import { Article } from "src/components/article";
-import { Layout } from "src/components/layout";
-import { Pan } from "src/components/pan";
-import type { MicroCMSContent } from "src/components/types";
+import { Article } from "src/components/articles";
 import { client } from "src/libs/microcms";
+import type { MicroCMSContent } from "src/types";
 
 const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
-  const author = props.datas.author ? props.datas.author : "No Name";
+  const author = props.datas.author ? props.datas.author : "Yoshiaki";
   const updatedAt = props.datas.updatedAt.substring(0, 10);
 
   return (
-    <>
-      <Head>
-        <title>{props.datas.mainTitle}</title>
-      </Head>
-
-      <Layout>
-        <Pan title={props.datas.mainTitle} />
-        <Article
-          title={props.datas.mainTitle}
-          bodys={props.datas.bodys}
-          updatedAt={updatedAt}
-          author={author}
-          id={props.datas.id}
-        />
-      </Layout>
-    </>
+    <Article
+      title={props.datas.mainTitle}
+      bodys={props.datas.bodys}
+      updatedAt={updatedAt}
+      author={author}
+      id={props.datas.id}
+    />
   );
 };
 
@@ -42,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     };
   });
 
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {

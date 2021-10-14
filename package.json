@@ -14,7 +14,8 @@
     "fix:prettier": "npm run lint:prettier --write",
     "test": "run-p -l -c --aggregate-output lint:* unit",
     "unit": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "json-server": "json-server --watch db.json --port 3001"
   },
   "babel": {
     "presets": [
@@ -30,6 +31,8 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-share": "^4.4.0",
+    "shopify-buy": "^2.12.0",
+    "swr": "^1.0.1",
     "tailwind-scrollbar-hide": "^1.0.3"
   },
   "devDependencies": {
@@ -37,6 +40,7 @@
     "@types/jest": "26.0.23",
     "@types/node": "15.6.1",
     "@types/react": "17.0.11",
+    "@types/shopify-buy": "^2.10.8",
     "@typescript-eslint/eslint-plugin": "4.26.1",
     "@typescript-eslint/parser": "4.26.1",
     "autoprefixer": "10.2.6",
@@ -49,10 +53,12 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "eslint-plugin-tailwindcss": "1.13.2",
+    "graphql": "^15.6.0",
     "husky": "6.0.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.0.4",
     "jest-watch-typeahead": "0.6.4",
+    "json-server": "^0.16.3",
     "lint-staged": "11.0.0",
     "npm-run-all": "4.1.5",
     "postcss": "8.3.2",

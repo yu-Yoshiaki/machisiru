@@ -9,12 +9,12 @@ type ArticleListTabView = {
   updatedAt: string;
 };
 
-export const ArticleTab: VFC<ArticleListTabView> = (props) => {
+export const Card: VFC<ArticleListTabView> = (props) => {
   const updatedAt = props.updatedAt.substring(0, 10);
 
   return (
     <article className="md:mr-4 mb-4 w-[49%] md:w-[30%] md:h-80 bg-white">
-      <Link href={`/news/${props.url}`}>
+      <Link href={`/news/${props.url}`} prefetch={false}>
         <a>
           <Image src={props.image} width={350} height={300} layout={"responsive"} alt="No Image" className="mx-auto" />
           <p className="pt-2 pl-3 text-xs text-left text-gray-600">{updatedAt}</p>
