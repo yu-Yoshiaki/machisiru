@@ -1,5 +1,5 @@
 import type { VFC } from "react";
-import { Layout } from "src/components/layout";
+import { Layout } from "src/components/layouts/layout";
 
 const Comingsoon: VFC = () => {
   return (

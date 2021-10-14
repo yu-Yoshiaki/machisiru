@@ -2,6 +2,7 @@ import "tailwindcss/tailwind.css";
 
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { Layout } from "src/components/layouts";
 
 const App = (props: AppProps) => {
   return (
@@ -10,7 +11,10 @@ const App = (props: AppProps) => {
         <title>FIND NEXT</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
       </Head>
-      <props.Component {...props.pageProps} />
+
+      <Layout>
+        <props.Component {...props.pageProps} />
+      </Layout>
     </>
   );
 };

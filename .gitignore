@@ -36,3 +36,11 @@ yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
+
+/db.json
+
+# shopify
+/src/pages/shopify
+/src/components/shopify
+/src/components/Test.tsx
+/src/libs/shopify.js

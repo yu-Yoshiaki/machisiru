@@ -1,6 +1,7 @@
 import type { VFC } from "react";
-import { ArticleTab } from "src/components/articleTab";
-import type { MicroCMSContent } from "src/components/types";
+import type { MicroCMSContent } from "src/types/microcms";
+
+import { Card } from "./Card";
 
 // const items = [
 //   { mainTitle: "hello", id: "1" },
@@ -34,18 +35,12 @@ import type { MicroCMSContent } from "src/components/types";
 //   { mainTitle: "dxcfgvhbjnkml,.;,mnbvfghjkll,kmjnhgfghjk,mknjbhgvffghjk", id: "8" },
 // ];
 
-export const ArticleList: VFC<{ items: MicroCMSContent[] }> = (props) => {
+export const List: VFC<{ items: MicroCMSContent[] }> = (props) => {
   return (
     <div className="flex flex-wrap justify-between md:justify-start items-start p-2 md:p-0">
       {props.items.map((item) => {
         return (
-          <ArticleTab
-            key={item.id}
-            image="/torii.jpg"
-            title={item.mainTitle}
-            url={item.id}
-            updatedAt={item.updatedAt}
-          />
+          <Card key={item.id} image="/torii.jpg" title={item.mainTitle} url={item.id} updatedAt={item.updatedAt} />
         );
       })}
     </div>

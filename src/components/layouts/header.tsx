@@ -4,10 +4,12 @@ import type { VFC } from "react";
 
 const items = [
   { href: "/", label: "HOME" },
-  { href: "/comingsoon", label: "TECH" },
-  { href: "/comingsoon", label: "MEDICAL" },
-  { href: "/comingsoon", label: "SPORT" },
-  { href: "/comingsoon", label: "CONTACT" },
+  // { href: null, label: "TECH" },
+  // { href: null, label: "MEDICAL" },
+  // { href: null, label: "SPORT" },
+  // { href: null, label: "CONTACT" },
+  // { href: "/shopify", label: "SHOP" },
+  { href: "/about", label: "About" },
 ];
 
 export const Header: VFC = () => {
@@ -20,9 +22,7 @@ export const Header: VFC = () => {
           </a>
         </Link>
       </h1>
-      <h2 className="md:p-0 px-2 pb-4 md:pb-0 w-full text-sm md:text-base text-center">
-        楽しいが止まらない！新しい「次」を見つけよう！！
-      </h2>
+      <h2 className="md:p-0 px-2 pb-4 md:pb-0 w-full text-sm md:text-base text-center">ー新しい次が見つかるー</h2>
 
       <nav className="flex overflow-scroll md:overflow-auto fixed md:static bottom-0 z-10 md:flex-none w-full bg-white border-t border-blue-300 md:border-none scrollbar-hide ">
         {items.map(({ href, label }) => {
