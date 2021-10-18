@@ -8,6 +8,8 @@ const api = async (req: NextApiRequest, res: NextApiResponse<MicroCMSContent[]>)
     endpoint: "blog",
   });
 
+  if (datas && undefined) return res.status(404).redirect("/");
+
   return res.status(200).json(datas.contents);
 };
 // eslint-disable-next-line import/no-default-export
