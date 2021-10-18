@@ -1,10 +1,12 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
-import type { VFC } from "react";
-import { Article } from "src/components/articles";
+import type { CustomNextPage } from "next";
+import { Layout } from "src/Layout";
 import { client } from "src/libs/microcms";
 import type { MicroCMSContent } from "src/types";
 
-const NewsDetail: VFC<{ datas: MicroCMSContent }> = (props) => {
+import { Article } from "./Article";
+
+const NewsDetail: CustomNextPage<{ datas: MicroCMSContent }> = (props) => {
   const author = props.datas.author ? props.datas.author : "Yoshiaki";
   const updatedAt = props.datas.updatedAt.substring(0, 10);
 
@@ -50,5 +52,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
   }
 };
+
+NewsDetail.getLayout = Layout;
 
 export default NewsDetail;

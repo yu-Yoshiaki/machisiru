@@ -1,6 +1,6 @@
 import type { VFC } from "react";
 
-import { Profile } from "./profile";
+import { Profile } from "./Profile";
 
 export const Side: VFC = () => {
   return (

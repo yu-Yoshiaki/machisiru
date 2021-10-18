@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import Head from "next/head";
 import type { VFC } from "react";
-import { Pan } from "src/components/layouts/pan";
+import { Pan } from "src/Layout/Pan";
 import type { MicroCMSField } from "src/types";
 
 import { ContentsShare } from "./ContentsShare";
