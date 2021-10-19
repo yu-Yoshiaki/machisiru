@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { NextApiRequest, NextApiResponse } from "next";
 import { client } from "src/libs/microcms";
-import type { MicroCMSContent } from "src/types";
+import type { NewsResponse } from "src/pages/news/types";
 
-const api = async (req: NextApiRequest, res: NextApiResponse<MicroCMSContent[]>) => {
-  const datas: { contents: MicroCMSContent[] } = await client.get({
+const api = async (req: NextApiRequest, res: NextApiResponse<NewsResponse[]>) => {
+  const datas: { contents: NewsResponse[] } = await client.get({
     endpoint: "blog",
   });
 
