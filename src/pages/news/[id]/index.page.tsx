@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { CustomNextPage } from "next";
 import Head from "next/head";
@@ -13,6 +14,8 @@ MicroCMS使用
 const NewsDetail: CustomNextPage<{ datas: NewsResponse }> = (props) => {
   const datas = props.datas;
   const updatedAt = datas.updatedAt ? datas.updatedAt.substring(0, 10) : "nothing";
+
+  console.log(props, " props in [id]");
 
   return (
     <div>

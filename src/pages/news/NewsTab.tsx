@@ -11,6 +11,9 @@ type Props = {
 };
 
 export const NewsTab: VFC<Props> = (props) => {
+  // eslint-disable-next-line no-console
+  console.log(props, " props in [props]");
+
   return (
     <article className="md:mr-4 mb-4 w-[49%] md:w-[30%] md:h-80 bg-white">
       <Link href={`/news/${props.id}`}>
