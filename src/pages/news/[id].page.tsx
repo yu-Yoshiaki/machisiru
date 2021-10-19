@@ -1,28 +1,39 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { CustomNextPage } from "next";
+import Head from "next/head";
 import { Layout } from "src/Layout";
 import { client } from "src/libs/microcms";
-import type { MicroCMSContent } from "src/types";
+import type { NewsResponse } from "src/pages/news/types";
 
-import { Article } from "./Article";
+import { NewsArticle } from "./NewsArticle";
+/* 
+MicroCMS使用
+*/
 
-const NewsDetail: CustomNextPage<{ datas: MicroCMSContent }> = (props) => {
-  const author = props.datas.author ? props.datas.author : "Yoshiaki";
-  const updatedAt = props.datas.updatedAt.substring(0, 10);
+const NewsDetail: CustomNextPage<{ datas: NewsResponse }> = (props) => {
+  const datas = props.datas;
+  const updatedAt = datas.updatedAt ? datas.updatedAt.substring(0, 10) : "nothing";
 
   return (
-    <Article
-      title={props.datas.mainTitle}
-      bodys={props.datas.bodys}
-      updatedAt={updatedAt}
-      author={author}
-      id={props.datas.id}
-    />
+    <div>
+      <Head>
+        <title>{datas.mainTitle}</title>
+      </Head>
+
+      <NewsArticle
+        mainTitle={datas.mainTitle}
+        bodys={datas.bodys}
+        updatedAt={updatedAt}
+        author={datas.author ?? "Yoshiaki"}
+        id={datas.id}
+      />
+    </div>
   );
 };
 
+//Dynamic Routing SSG
 export const getStaticPaths: GetStaticPaths = async () => {
-  const datas: { contents: MicroCMSContent[] } = await client.get({
+  const datas: { contents: NewsResponse[] } = await client.get({
     endpoint: "blog",
   });
 
@@ -37,13 +48,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (params !== undefined) {
-    const datas: MicroCMSContent = await client.get({
+    const datas: NewsResponse = await client.get({
       endpoint: `blog/${params.id}`,
     });
 
     return {
       props: {
-        datas: datas,
+        datas,
       },
     };
   } else {
