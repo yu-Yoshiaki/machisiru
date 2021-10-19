@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import { fireEvent, render } from "@testing-library/react";
-import Home from "src/pages/index.page";
+import Home from "src/pages/news/index.page";
 
 describe("Home page", () => {
   it("matches snapshot", () => {
