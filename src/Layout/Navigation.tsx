@@ -11,8 +11,6 @@ import { useState } from "react";
 
 export const Navigation = () => {
   const [value, setValue] = useState(0);
-  // eslint-disable-next-line no-console
-  console.log(value);
 
   return (
     <Box sx={{ width: 500 }}>
@@ -24,10 +22,10 @@ export const Navigation = () => {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction label="Home" icon={<HomeRoundedIcon />} />
+          <BottomNavigationAction label="HOME" icon={<HomeRoundedIcon />} />
           <BottomNavigationAction label="NEWS" icon={<ArticleRoundedIcon />} />
           <BottomNavigationAction label="ABOUT" icon={<ArchiveIcon />} />
-          <BottomNavigationAction label="ABOUT" icon={<ShoppingCartRoundedIcon />} />
+          <BottomNavigationAction label="SHOP" icon={<ShoppingCartRoundedIcon />} />
         </BottomNavigation>
       </Paper>
     </Box>
