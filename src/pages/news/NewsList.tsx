@@ -18,6 +18,7 @@ export const NewsList: VFC = () => {
           return (
             <NewsTab
               key={blog.id}
+              id={blog.id}
               updatedAt={blog.updatedAt ? blog.updatedAt.substring(0, 10) : "nothing"}
               mainTitle={blog.mainTitle}
               image={blog.mainImage ? blog.mainImage.image.url : "/torii.jpg"}
