@@ -11,6 +11,9 @@ export const NewsList: VFC = () => {
   if (!blog && !error) return <div>isLoding</div>;
   if (blog && blog.length === 0) return <div>isEmpty</div>;
 
+  // eslint-disable-next-line no-console
+  console.log(blog, " props in [List]");
+
   return (
     <div className="flex flex-wrap justify-between md:justify-start items-start p-2 md:p-0">
       {blog ? (

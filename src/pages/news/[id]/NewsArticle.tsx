@@ -3,9 +3,9 @@ import type { VFC } from "react";
 import { Pan } from "src/Layout/Pan";
 import type { NewsResponse } from "src/pages/news/types";
 
-import { ContentsShare } from "./ContentsShare";
-import { ImageCustomField } from "./microcms/ImageCustomField";
-import { ParagraphCustomField } from "./microcms/ParagraphCustomField";
+import { ContentsShare } from "../ContentsShare";
+import { ImageCustomField } from "../microcms/ImageCustomField";
+import { ParagraphCustomField } from "../microcms/ParagraphCustomField";
 
 export const NewsArticle: VFC<NewsResponse> = (props) => {
   return (
