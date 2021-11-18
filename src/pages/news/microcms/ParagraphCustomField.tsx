@@ -11,7 +11,7 @@ export const ParagraphCustomField: VFC<ParagraphCustomField> = (props) => {
   return (
     <div>
       <h2 className="text-lg md:text-xl font-bold text-center bg-red-100">{props.h2_title}</h2>
-      <p className="p-1 md:p-10" dangerouslySetInnerHTML={{ __html: props.h2_content }}></p>
+      <p className="overflow-x-auto p-1 md:p-10" dangerouslySetInnerHTML={{ __html: props.h2_content }}></p>
     </div>
   );
 };

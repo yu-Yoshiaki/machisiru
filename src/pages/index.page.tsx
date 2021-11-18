@@ -1,12 +1,10 @@
-import { useRouter } from "next/dist/client/router";
-import { useEffect } from "react";
+import type { CustomNextPage } from "next";
+import { Layout } from "src/Layout";
 
-const Index = () => {
-  const router = useRouter();
-  useEffect(() => {
-    router.push("/news");
-  }, [router]);
-  return <div></div>;
+const Index: CustomNextPage = () => {
+  return <div>ようこそ</div>;
 };
+
+Index.getLayout = Layout;
 
 export default Index;

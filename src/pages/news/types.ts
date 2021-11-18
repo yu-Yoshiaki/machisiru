@@ -20,9 +20,9 @@ type MicroCMSBaseResponse = {
 };
 
 //カスタムフィールド「画像」の型
-type ImageCustomField = MicroCMSCustomField<"image", { image: MicroCMSField["image"]; alt: string }>;
+export type ImageCustomField = MicroCMSCustomField<"image", { image: MicroCMSField["image"]; alt: string }>;
 //カスタムフィールド「paragraph」の型
-type ParagraphCustomField = MicroCMSCustomField<
+export type ParagraphCustomField = MicroCMSCustomField<
   "paragraph",
   // eslint-disable-next-line @typescript-eslint/naming-convention
   { h2_title: MicroCMSField["textField"]; h2_content: MicroCMSField["richEditor"] }

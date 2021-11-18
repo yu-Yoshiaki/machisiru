@@ -7,7 +7,7 @@ type ImageCustomField = MicroCMSCustomField<"image", { image: MicroCMSField["ima
 
 export const ImageCustomField: VFC<ImageCustomField> = (props) => {
   return (
-    <div className="w-full ">
+    <div className="w-full">
       <Image src={props.image.url} width={600} height={600} layout={"responsive"} alt={props.alt} className="mx-auto" />
     </div>
   );
