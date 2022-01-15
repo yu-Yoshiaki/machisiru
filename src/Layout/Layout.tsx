@@ -1,10 +1,9 @@
-import type { VFC } from "react";
+import type { CustomLayout } from "next";
 
-import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { Side } from "./Side";
 
-export const Layout: VFC = (page) => {
+export const Layout: CustomLayout = (page) => {
   return (
     <>
       <div className="md:grid grid-rows-[auto,1fr,auto] gap-y-8 bg-gray-100 ">
@@ -15,7 +14,6 @@ export const Layout: VFC = (page) => {
             <Side />
           </div>
         </main>
-        <Footer />
       </div>
     </>
   );
