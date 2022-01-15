@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { VFC } from "react";
-import type { MicroCMSCustomField, MicroCMSField } from "src/pages/news/types";
+import type { MicroCMSCustomField, MicroCMSField } from "src/types/microcms";
 
 //カスタムフィールド「画像」の型
 type ImageCustomField = MicroCMSCustomField<"image", { image: MicroCMSField["image"]; alt: string }>;

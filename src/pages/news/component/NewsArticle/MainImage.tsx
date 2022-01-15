@@ -6,11 +6,11 @@ export const NewsArticleMainImage: VFC<{ mainImage: any | undefined }> = (props)
   return (
     <div>
       {mainImage && (
-        <div className="w-full">
+        <div className="p-5 w-full">
           <Image
             src={mainImage.image.url}
-            width={600}
-            height={600}
+            width={400}
+            height={400}
             layout={"responsive"}
             alt={mainImage.alt}
             className="mx-auto"

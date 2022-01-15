@@ -3,7 +3,7 @@ import type { GetStaticPaths, GetStaticProps } from "next";
 import type { CustomNextPage } from "next";
 import { Layout } from "src/Layout";
 import { client } from "src/libs/microcms";
-import type { NewsResponse } from "src/pages/news/types";
+import type { NewsResponse } from "src/types/microcms";
 
 import { NewsArticleLayout } from "./Layout";
 /* 
