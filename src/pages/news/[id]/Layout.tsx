@@ -2,13 +2,13 @@
 import Head from "next/head";
 import type { VFC } from "react";
 import { Pan } from "src/Layout/Pan";
-import type { MicroCMSCustomField } from "src/pages/news/types";
+import { NewsArticleMainImage } from "src/pages/news/component/NewsArticle/MainImage";
+import { NewsArticleTop } from "src/pages/news/component/NewsArticle/Top";
+import type { MicroCMSCustomField } from "src/types/microcms";
 
 // import type { NewsResponse } from "src/pages/news/types";
-import { ContentsShare } from "../ContentsShare";
-import { NewsArticleMain } from "./NewsArticleMain";
-import { NewsArticleMainImage } from "./NewsArticleMainImage";
-import { NewsArticleTop } from "./NewsArticleTop";
+import { ContentsShare } from "../component/ContentsShare";
+import { NewsArticleMain } from "../component/NewsArticle/Main";
 
 type Props = {
   mainTitle: string;
@@ -57,14 +57,13 @@ export const NewsArticleLayout: VFC<Props> = (props) => {
   const id = props.id;
 
   return (
-    <div>
+    <div className="font-mono">
       <Head>
         <title>{mainTitle}</title>
       </Head>
 
-      <Pan title={mainTitle} />
-
-      <div className="px-2 md:px-0 pt-5 pb-10 md:mr-4 mb-7 bg-white">
+      <div className="px-2 md:px-0 pb-10 md:mr-4 mb-7 space-y-5 bg-white">
+        <Pan title={mainTitle} />
         <NewsArticleTop mainTitle={mainTitle} updatedAt={updatedAt} />
         <NewsArticleMainImage mainImage={mainImage} />
         <NewsArticleMain bodys={bodys} />
