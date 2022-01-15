@@ -1,15 +1,11 @@
 import type { VFC } from "react";
-import type { NewsResponse } from "src/pages/news/types";
-import useSWR from "swr";
+import { useSWRState } from "src/hooks/useSWRState";
+import type { NewsResponse } from "src/types/microcms";
 
 import { NewsTab } from "./NewsTab";
 
 export const NewsList: VFC = () => {
-  const { data: blog, error } = useSWR<NewsResponse[]>("/api/microcms");
-
-  if (error) return <div>error</div>;
-  if (!blog && !error) return <div>isLoding</div>;
-  if (blog && blog.length === 0) return <div>isEmpty</div>;
+  const [blog] = useSWRState("/microcms");
 
   // eslint-disable-next-line no-console
   console.log(blog, " props in [List]");
@@ -17,7 +13,7 @@ export const NewsList: VFC = () => {
   return (
     <div className="flex flex-wrap justify-between md:justify-start items-start p-2 md:p-0">
       {blog ? (
-        blog.map((blog) => {
+        blog.map((blog: NewsResponse) => {
           return (
             <NewsTab
               key={blog.id}

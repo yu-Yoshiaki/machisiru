@@ -22,26 +22,15 @@ type SocialProps = {
 export const ContentsShare: VFC<SocialProps> = (props) => {
   const title = props.title + "- FIND NEXT";
   return (
-    <div className="flex justify-around mt-8">
-      <FacebookShareButton url={props.url} className="md:flex md:items-center space-y-1 space-x-1 md:space-x-4">
+    <div className="flex justify-center mt-8 space-x-5 md:space-x-5">
+      <FacebookShareButton url={props.url}>
         <FacebookIcon size={props.size ? props.size : config.size} round />
-        <p className="text-xs md:text-base">Facebookでシェア</p>
       </FacebookShareButton>
-      <TwitterShareButton
-        url={props.url}
-        title={title}
-        className="md:flex md:items-center space-y-1 space-x-1 md:space-x-4"
-      >
+      <TwitterShareButton url={props.url} title={title}>
         <TwitterIcon size={props.size ? props.size : config.size} round />
-        <p className="text-xs md:text-base">Twitterでシェア</p>
       </TwitterShareButton>
-      <LineShareButton
-        url={props.url}
-        title={title}
-        className="md:flex md:items-center space-y-1 space-x-1 md:space-x-4"
-      >
+      <LineShareButton url={props.url} title={title}>
         <LineIcon size={props.size ? props.size : config.size} round />
-        <p className="text-xs md:text-base">Lineでシェア</p>
       </LineShareButton>
     </div>
   );

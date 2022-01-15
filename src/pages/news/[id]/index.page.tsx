@@ -1,36 +1,26 @@
 /* eslint-disable no-console */
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { CustomNextPage } from "next";
-import Head from "next/head";
 import { Layout } from "src/Layout";
 import { client } from "src/libs/microcms";
-import type { NewsResponse } from "src/pages/news/types";
+import type { NewsResponse } from "src/types/microcms";
 
-import { NewsArticle } from "./NewsArticle";
+import { NewsArticleLayout } from "./Layout";
 /* 
 MicroCMS使用
 */
 
 const NewsDetail: CustomNextPage<{ datas: NewsResponse }> = (props) => {
   const datas = props.datas;
-  const updatedAt = datas.updatedAt ? datas.updatedAt.substring(0, 10) : "nothing";
-
-  console.log(props, " props in [id]");
 
   return (
-    <div>
-      <Head>
-        <title>{datas.mainTitle}</title>
-      </Head>
-
-      <NewsArticle
-        mainTitle={datas.mainTitle}
-        bodys={datas.bodys}
-        updatedAt={updatedAt}
-        author={datas.author ?? "Yoshiaki"}
-        id={datas.id}
-      />
-    </div>
+    <NewsArticleLayout
+      mainTitle={datas.mainTitle}
+      mainImage={datas.mainImage}
+      bodys={datas.bodys}
+      updatedAt={datas.updatedAt ? datas.updatedAt.substring(0, 10) : "nothing"}
+      id={datas.id}
+    />
   );
 };
 
