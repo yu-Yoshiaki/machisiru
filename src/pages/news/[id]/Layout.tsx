@@ -57,7 +57,7 @@ export const NewsArticleLayout: VFC<Props> = (props) => {
   const id = props.id;
 
   return (
-    <div className="font-mono">
+    <div>
       <Head>
         <title>{mainTitle}</title>
       </Head>

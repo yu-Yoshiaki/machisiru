@@ -5,7 +5,7 @@ import type { CustomNextPage } from "next";
 import { useSWRState } from "src/hooks/useSWRState";
 import { Layout } from "src/Layout";
 import { client } from "src/libs/microcms";
-import { NewsTab } from "src/pages/news/component/NewsTab";
+import { Card } from "src/pages/news/component/Card";
 import type { NewsResponse } from "src/types/microcms";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -29,22 +29,24 @@ const Index: CustomNextPage<{
   const [blog] = useSWRState("/microcms", props.datas.contents);
 
   return (
-    <div className="flex flex-wrap justify-between md:justify-start items-start p-2 md:p-0">
-      {blog ? (
-        blog.map((blog: NewsResponse) => {
-          return (
-            <NewsTab
-              key={blog.id}
-              id={blog.id}
-              updatedAt={blog.updatedAt ? blog.updatedAt.substring(0, 10) : "nothing"}
-              mainTitle={blog.mainTitle}
-              image={blog.mainImage ? blog.mainImage.image.url : "/torii.jpg"}
-            />
-          );
-        })
-      ) : (
-        <h2>undefined</h2>
-      )}
+    <div className="h-full">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-x-4 gap-y-4">
+        {blog ? (
+          blog.map((blog: NewsResponse) => {
+            return (
+              <Card
+                key={blog.id}
+                id={blog.id}
+                updatedAt={blog.updatedAt ? blog.updatedAt.substring(0, 10) : "nothing"}
+                mainTitle={blog.mainTitle}
+                image={blog.mainImage ? blog.mainImage.image.url : "/torii.jpg"}
+              />
+            );
+          })
+        ) : (
+          <h2>undefined</h2>
+        )}
+      </div>
     </div>
   );
 };
