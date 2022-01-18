@@ -2,20 +2,17 @@ import type { VFC } from "react";
 import { useSWRState } from "src/hooks/useSWRState";
 import type { NewsResponse } from "src/types/microcms";
 
-import { NewsTab } from "./NewsTab";
+import { Card } from "./Card";
 
 export const NewsList: VFC = () => {
   const [blog] = useSWRState("/microcms");
 
-  // eslint-disable-next-line no-console
-  console.log(blog, " props in [List]");
-
   return (
-    <div className="flex flex-wrap justify-between md:justify-start items-start p-2 md:p-0">
+    <div className="flex flex-wrap justify-between items-start p-2 md:p-0">
       {blog ? (
         blog.map((blog: NewsResponse) => {
           return (
-            <NewsTab
+            <Card
               key={blog.id}
               id={blog.id}
               updatedAt={blog.updatedAt ? blog.updatedAt.substring(0, 10) : "nothing"}
