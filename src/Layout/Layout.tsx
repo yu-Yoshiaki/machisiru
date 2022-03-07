@@ -2,19 +2,17 @@ import type { CustomLayout } from "next";
 
 import { Header } from "./Header";
 import { Side } from "./Side";
+import { Footer } from "./Footer";
 
 export const Layout: CustomLayout = (page) => {
   return (
-    <>
-      <div className="md:grid grid-rows-[auto,1fr] gap-y-8 font-mono bg-gray-100 ">
+    <div className="md:grid grid-rows-[auto,1fr,auto] gap-y-8 font-mono bg-gray-100 justify-center">
         <Header />
-        <main className="pt-3 pb-10 md:mx-auto md:w-5/6">
-          <div className="md:grid grid-cols-[auto,30%] gap-x-4 gap-y-4">
-            {page}
-            <Side />
-          </div>
+        <main className="grid grid-cols-[min(500px),250px] gap-x-8 min-h-screen max-w-[1110px] pt-[120px]">
+          {page}
+          <Side />
         </main>
+        <Footer />
       </div>
-    </>
   );
 };
