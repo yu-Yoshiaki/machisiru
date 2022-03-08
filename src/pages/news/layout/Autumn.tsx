@@ -1,6 +1,6 @@
 import type { ReactChild, VFC } from "react";
-import { Footer } from "src/layout/Footer";
-import { Header } from "src/layout/Header";
+import { Footer } from "src/Layout/Footer";
+import { Header } from "src/Layout/Header";
 
 export const Autumn: VFC<{ children: ReactChild }> = (props) => {
   return (

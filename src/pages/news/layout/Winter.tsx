@@ -1,7 +1,7 @@
 import type { ReactChild, VFC } from "react";
-import { Footer } from "src/layout/Footer";
-import { Header } from "src/layout/Header";
-import { Side } from "src/layout/Side";
+import { Footer } from "src/Layout/Footer";
+import { Header } from "src/Layout/Header";
+import { Side } from "src/Layout/Side";
 import Snowfall from "react-snowfall";
 
 export const Winter: VFC<{ children: ReactChild }> = (props) => {
