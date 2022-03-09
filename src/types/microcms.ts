@@ -34,11 +34,9 @@ export type MicroCMSCustomField<T, U> = {
 } & U;
 
 //カスタムフィールド --------------------------------------------------------------------------------------
-type MicroCMSResponse<U> = MicroCMSBaseResponse & U;
-
-export type NewsResponse = MicroCMSResponse<{
+export type NewsResponse = MicroCMSBaseResponse&{
   mainTitle: MicroCMSField["textField"];
   author?: MicroCMSField["textField"];
   mainImage?: ImageCustomField;
   bodys: (ImageCustomField | ParagraphCustomField)[];
-}>;
+};
