@@ -2,8 +2,6 @@
 import Link from "next/link";
 import type { VFC } from "react";
 
-import { Navigation } from "./Navigation";
-
 export const Header: VFC = () => {
   return (
     <header className="fixed top-0 z-20 bg-white w-full h-[100px]">
