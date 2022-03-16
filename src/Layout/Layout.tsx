@@ -6,10 +6,10 @@ import { Side } from "./Side";
 
 export const Layout: CustomLayout = (page) => {
   return (
-    <div className="font-mono bg-gray-300">
+    <div className="font-mono">
       <Header />
 
-      <main className="pt-[150px] mx-auto w-[90%] md:max-w-[1440px] min-h-screen">
+      <main className="grid lg:grid-cols-[1fr,20%] justify-center pt-[150px] mx-auto md:w-[95%] md:max-w-[1440px] min-h-screen">
         {page}
         <Side />
       </main>
