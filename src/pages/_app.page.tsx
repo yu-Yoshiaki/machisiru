@@ -14,7 +14,7 @@ const App = (props: CustomAppProps) => {
   return (
     <>
       <Head>
-        <title>FIND NEXT</title>
+        <title>MACHISIRU</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
       </Head>
       {getLayout(<props.Component {...props.pageProps} />)}
