@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { CustomNextPage } from "next";
-import { Layout } from "src/layout";
+import { Layout } from "src/pages/layout";
 import { client } from "src/libs/microcms";
 import type { NewsResponse } from "src/types/microcms";
 

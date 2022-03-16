@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Layout } from "src/layout";
+import { Layout } from "src/pages/layout";
 import type { MicroCMSCustomField } from "src/types/microcms";
 
 import { NewsArticleLayout } from "./Layout";

@@ -1,7 +1,7 @@
 import type { CustomNextPage } from "next";
 import { useRouter } from "next/dist/client/router";
 import { useEffect } from "react";
-import { Layout } from "src/Layout";
+import { Layout } from "src/pages/layout";
 
 const Index: CustomNextPage = () => {
   const router = useRouter();
