@@ -1,7 +1,5 @@
 module.exports = {
-  mode: "jit",
   content: ["./pages/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
-  darkMode: false, // 'media' or 'class'
   theme: {
     extend: {
       outline: {
