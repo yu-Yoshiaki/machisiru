@@ -25,7 +25,7 @@ export const Card: VFC<CardProps> = (props) => {
             />
           </div>
           <p className="pt-2 pl-3 text-xs text-left text-gray-600">{props.updatedAt.substring(0, 10)}</p>
-          <h2 className="overflow-hidden px-3 font-bold overflow-ellipsis ">{props.mainTitle}</h2>
+          <h2 className="overflow-hidden px-3 font-bold text-ellipsis ">{props.mainTitle}</h2>
         </a>
       </Link>
     </article>
