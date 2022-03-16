@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { Pan } from "layout/Pan";
 import Head from "next/head";
 import type { VFC } from "react";
-import { Pan } from "src/layout/Pan";
 import { NewsArticleMainImage } from "src/pages/news/component/NewsArticle/MainImage";
 import { NewsArticleTop } from "src/pages/news/component/NewsArticle/Top";
 import type { MicroCMSCustomField } from "src/types/microcms";
