@@ -6,12 +6,12 @@ module.exports = {
   env: { es2021: true, browser: true, jest: true, node: true },
   plugins: ["@typescript-eslint", "import", "simple-import-sort", "tailwindcss"],
   extends: [
+    "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:tailwindcss/recommended",
     "prettier",
   ],
   rules: {
