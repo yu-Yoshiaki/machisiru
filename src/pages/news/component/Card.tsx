@@ -11,7 +11,7 @@ type CardProps = {
 
 export const Card: VFC<CardProps> = (props) => {
   return (
-    <article className="w-[300px] h-[280px] tracking-wide bg-white hover:bg-gray-200 rounded-lg shadow-sm">
+    <article className="min-h-[280px] tracking-wide bg-white hover:bg-gray-200 rounded-lg shadow-sm">
       <Link href={`/news/${props.id}`}>
         <a>
           <div>
@@ -25,7 +25,7 @@ export const Card: VFC<CardProps> = (props) => {
             />
           </div>
           <p className="pt-2 pl-3 text-xs text-left text-gray-600">{props.updatedAt.substring(0, 10)}</p>
-          <h2 className="overflow-hidden px-3 font-bold overflow-ellipsis ">{props.mainTitle}</h2>
+          <h2 className="overflow-hidden px-3 font-bold text-ellipsis ">{props.mainTitle}</h2>
         </a>
       </Link>
     </article>

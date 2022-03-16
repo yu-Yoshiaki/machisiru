@@ -62,7 +62,7 @@ export const NewsArticleLayout: VFC<Props> = (props) => {
         <title>{mainTitle}</title>
       </Head>
 
-      <div className="px-2 md:px-0 pb-10 md:mr-4 mb-7 space-y-5 bg-white">
+      <div className="px-2 pb-10 mb-7 space-y-5 bg-white md:px-0 md:mr-4">
         <Pan title={mainTitle} />
         <NewsArticleTop mainTitle={mainTitle} updatedAt={updatedAt} />
         <NewsArticleMainImage mainImage={mainImage} />
