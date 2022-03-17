@@ -5,7 +5,7 @@ import type { CustomNextPage } from "next";
 import { useSWRState } from "src/hooks/useSWRState";
 import { Layout } from "src/layout";
 import { client } from "src/libs/microcms";
-import { Card } from "src/pages/news/component/Card";
+import { Card } from "src/pages/article/_component/Card";
 import type { NewsResponse } from "src/types/microcms";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       datas,
     },
-    revalidate: 3,
+    revalidate: 5,
   };
 };
 
