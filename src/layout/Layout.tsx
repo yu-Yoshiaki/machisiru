@@ -9,7 +9,7 @@ export const Layout: CustomLayout = (page) => {
     <div className="font-mono">
       <Header />
 
-      <main className="lg:grid lg:grid-cols-[1fr,20%] w-full justify-center pt-[150px] mx-auto md:w-[95%] md:max-w-[1440px] min-h-screen">
+      <main className="lg:grid lg:grid-cols-[1fr,20%] w-full justify-center pt-[100px] mx-auto md:w-[95%] md:max-w-[1440px] min-h-screen">
         {page}
         <Side />
       </main>
