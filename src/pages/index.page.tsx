@@ -7,7 +7,7 @@ const Index: CustomNextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/news");
+    router.push("/article/list");
   }, [router]);
 
   return <div></div>;

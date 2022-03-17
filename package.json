@@ -11,7 +11,7 @@
     "fix": "run-s -l -c fix:lint fix:prettier",
     "fix:lint": "next lint --fix",
     "fix:prettier": "prettier --write .",
-    "test": "run-p -l -c --aggregate-output lint:* unit",
+    "test": "run-p -l -c --aggregate-output lint unit",
     "unit": "jest",
     "prepare": "husky install",
     "json-server": "json-server --watch db.json --port 3001",
@@ -32,6 +32,7 @@
     "printWidth": 120
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "microcms-js-sdk": "^2.0.0",
     "next": "12.1.0",
     "react": "17.0.2",

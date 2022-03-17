@@ -1,4 +1,3 @@
-//MicroCMSの ベース型
 export type textField = string;
 export type textArea = string;
 export type image = {
@@ -9,7 +8,7 @@ export type image = {
 export type richEditor = string;
 
 //MicroCMSのレスポンスに既定で存在する型
-type MicroCMSBaseResponse = {
+type Base = {
   id: string;
   createdAt?: string;
   updatedAt?: string;
@@ -30,11 +29,24 @@ export type ParagraphCustomField = {
   h2_content: richEditor;
 };
 
+export type SpeechBubbleCustomField = {
+  fieldId: "speechBubble";
+  leftImage: image;
+  leftImageAlt: textField;
+  rightImage: image;
+  rightImageAlt: textField;
+  speechBody: {
+    fieldId: "bubbleItem";
+    positionRight: boolean;
+    speechText: textArea;
+  }[];
+};
+
 //カスタムフィールド --------------------------------------------------------------------------------------
-export type NewsResponse = MicroCMSBaseResponse & {
+export type NewsResponse = Base & {
   mainTitle: textField;
   author?: textField;
   mainImage?: ImageCustomField;
-  bodys: (ImageCustomField | ParagraphCustomField)[];
-  season?: ["春"] | ["夏"] | ["秋"] | ["冬"];
+  bodys: [ImageCustomField | ParagraphCustomField | SpeechBubbleCustomField];
+  season?: ["春" | "夏" | "秋" | "冬"];
 };

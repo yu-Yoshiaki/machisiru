@@ -1,19 +1,20 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import Link from "next/link";
 import type { VFC } from "react";
-
+import Image from "next/image";
 export const Pan: VFC<{ title: string }> = (props) => {
   return (
-    <div className="md:col-span-3 space-x-2 md:space-x-4 ">
-      <nav className="flex overflow-scroll md:overflow-visible md:py-4 px-2 md:px-4 w-[95%] text-sm md:text-base whitespace-nowrap scrollbar-hide">
+    <div>
+      <nav className="flex space-x-1 items-center overflow-scroll md:overflow-visible p-2 text-sm md:text-base whitespace-nowrap">
         <Link href="/">
-          <a className="font-bold">HOME</a>
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+            </svg>
+          </a>
         </Link>
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-          <path d="M0 0h24v24H0V0z" fill="none" />
-          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z" />
-        </svg>
-        <p className="md:before:mr-2">{props.title}</p>
+        <p>{">"}</p><p className="md:before:mr-2">{props.title}</p>
       </nav>
     </div>
   );

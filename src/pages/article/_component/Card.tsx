@@ -12,7 +12,7 @@ type CardProps = {
 export const Card: VFC<CardProps> = (props) => {
   return (
     <article className="min-h-[280px] tracking-wide bg-white hover:bg-gray-200 rounded-lg shadow-sm">
-      <Link href={`/news/${props.id}`}>
+      <Link href={`/article/${props.id}`}>
         <a>
           <div>
             <Image
