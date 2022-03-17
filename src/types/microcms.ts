@@ -1,14 +1,12 @@
-//MicroCMS側の各フィールドに割り当てられた型
-export type MicroCMSField = {
-  textField: string;
-  textArea: string;
-  image: {
-    url: string;
-    height: number;
-    width: number;
-  };
-  richEditor: string;
+//MicroCMSの ベース型
+export type textField = string;
+export type textArea = string;
+export type image = {
+  url: string;
+  height: number;
+  width: number;
 };
+export type richEditor = string;
 
 //MicroCMSのレスポンスに既定で存在する型
 type MicroCMSBaseResponse = {
@@ -20,23 +18,23 @@ type MicroCMSBaseResponse = {
 };
 
 //カスタムフィールド「画像」の型
-export type ImageCustomField = MicroCMSCustomField<"image", { image: MicroCMSField["image"]; alt: string }>;
-//カスタムフィールド「paragraph」の型
-export type ParagraphCustomField = MicroCMSCustomField<
-  "paragraph",
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  { h2_title: MicroCMSField["textField"]; h2_content: MicroCMSField["richEditor"] }
->;
+export type ImageCustomField = {
+  fieldId: "image";
+  image: image;
+  alt: string;
+};
 
-//カスタムフィールド型
-export type MicroCMSCustomField<T, U> = {
-  fieldId: T;
-} & U;
+export type ParagraphCustomField = {
+  fieldId: "paragraph";
+  h2_title: textField;
+  h2_content: richEditor;
+};
 
 //カスタムフィールド --------------------------------------------------------------------------------------
 export type NewsResponse = MicroCMSBaseResponse & {
-  mainTitle: MicroCMSField["textField"];
-  author?: MicroCMSField["textField"];
+  mainTitle: textField;
+  author?: textField;
   mainImage?: ImageCustomField;
   bodys: (ImageCustomField | ParagraphCustomField)[];
+  season?: ["春"] | ["夏"] | ["秋"] | ["冬"];
 };
