@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { VFC } from "react";
-import { ImageField } from "src/pages/news/component/MicrocmsField/ImageField";
-import { ParagraphField } from "src/pages/news/component/MicrocmsField/ParagraphField";
+import { ImageField } from "src/pages/article/_component/Article/ImageField";
+import { ParagraphField } from "src/pages/article/_component/Article/ParagraphField";
 import type { NewsResponse } from "src/types/microcms";
 
-export const NewsArticleMain: VFC<{ bodys: NewsResponse["bodys"] }> = (props) => {
+export const Main: VFC<{ bodys: NewsResponse["bodys"] }> = (props) => {
   return (
     <div className="space-y-3">
       {props.bodys.map((body) => {

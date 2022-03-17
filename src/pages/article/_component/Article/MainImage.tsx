@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { VFC } from "react";
 
-export const NewsArticleMainImage: VFC<{ mainImage: any | undefined }> = (props) => {
+export const MainImage: VFC<{ mainImage: any | undefined }> = (props) => {
   const mainImage = props.mainImage;
   return (
     <div>

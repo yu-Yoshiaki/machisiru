@@ -4,7 +4,7 @@ import type { NewsResponse } from "src/types/microcms";
 
 import { Card } from "./Card";
 
-export const NewsList: VFC = () => {
+export const ArticleList: VFC = () => {
   const [blog] = useSWRState("/microcms");
 
   return (
