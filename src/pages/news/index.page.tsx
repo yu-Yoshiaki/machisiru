@@ -30,7 +30,7 @@ const Index: CustomNextPage<{
 
   return (
     <div className="h-full">
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4 px-4">
         {blog ? (
           blog.map((blog: NewsResponse) => {
             return (
