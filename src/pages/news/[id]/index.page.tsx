@@ -11,17 +11,7 @@ MicroCMS使用
 */
 
 const NewsDetail: CustomNextPage<{ datas: NewsResponse }> = (props) => {
-  const datas = props.datas;
-
-  return (
-    <NewsArticleLayout
-      mainTitle={datas.mainTitle}
-      mainImage={datas.mainImage}
-      bodys={datas.bodys}
-      updatedAt={datas.updatedAt ? datas.updatedAt.substring(0, 10) : "nothing"}
-      id={datas.id}
-    />
-  );
+  return <NewsArticleLayout datas={props.datas} />;
 };
 
 //Dynamic Routing SSG
