@@ -54,19 +54,20 @@ import type { SpeechBubbleCustomField } from "src/types/microcms";
 
 export const SpeechBubbleField: VFC<{ bubble: SpeechBubbleCustomField }> = (props) => {
   const bubble = props.bubble;
+
   return (
     <div className="space-y-4">
-      {bubble.speechBody.map((body) => {
+      {bubble.speechBody.map((body, index) => {
         if (body.positionRight) {
           return (
-            <div className="grid grid-cols-[1fr,40px] items-start ml-auto w-[90%]">
+            <div key={index} className="grid grid-cols-[1fr,40px] items-start ml-auto w-[90%]">
               <div className="inline-block relative before:absolute before:top-[10px] before:left-[100%] py-2 px-1 mr-4 before:content-[''] rounded-lg border-2 before:border-[10px] before:border-l-[10px] border-white before:border-transparent before:border-l-[#e0edff] before:border-solid">
                 <p>{body.speechText}</p>
               </div>
               <Image
                 className="bg-white rounded-full"
-                src={bubble.rightImage.url}
-                alt={bubble.rightImageAlt}
+                src={bubble.rightImage ? bubble.rightImage.url : "/account.png"}
+                alt={bubble.rightImageAlt ? bubble.rightImageAlt : "account"}
                 width={40}
                 height={40}
               />
@@ -74,11 +75,11 @@ export const SpeechBubbleField: VFC<{ bubble: SpeechBubbleCustomField }> = (prop
           );
         } else {
           return (
-            <div className="grid grid-cols-[40px,1fr] items-start w-[90%]">
+            <div key={index} className="grid grid-cols-[40px,1fr] items-start w-[90%]">
               <Image
                 className="rounded-full"
-                src={bubble.leftImage.url}
-                alt={bubble.leftImageAlt}
+                src={bubble.leftImage ? bubble.leftImage.url : "/author.jpeg"}
+                alt={bubble.leftImageAlt ? bubble.leftImageAlt : "author"}
                 width={40}
                 height={40}
               />
