@@ -5,13 +5,13 @@ import { Layout } from "src/layout";
 import { client } from "src/libs/microcms";
 import type { NewsResponse } from "src/types/microcms";
 
-import { NewsArticleLayout } from "./Layout";
+import { ArticleLayout } from "./Layout";
 /* 
 MicroCMS使用
 */
 
 const NewsDetail: CustomNextPage<{ datas: NewsResponse }> = (props) => {
-  return <NewsArticleLayout datas={props.datas} />;
+  return <ArticleLayout datas={props.datas} />;
 };
 
 //Dynamic Routing SSG
