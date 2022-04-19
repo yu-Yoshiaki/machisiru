@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useSWRState } from "src/hooks/useSWRState";
 import { Layout } from "src/layout";
 import { client } from "src/libs/microcms";
-import { New } from "src/pages/article/_component/new";
+import { New } from "src/pages/article/_component/New";
 import { Recommend } from "src/pages/article/_component/Recommend";
 import type { NewsResponse } from "src/types/microcms";
 
