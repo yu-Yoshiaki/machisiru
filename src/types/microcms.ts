@@ -47,6 +47,7 @@ export type NewsResponse = Base & {
   mainTitle: textField;
   author?: textField;
   mainImage?: ImageCustomField;
+  tag: [] | (Base & { name: string })[];
   bodys: [ImageCustomField | ParagraphCustomField | SpeechBubbleCustomField];
   season?: ["春" | "夏" | "秋" | "冬"];
 };
