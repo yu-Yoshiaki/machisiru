@@ -7,3 +7,4 @@ export { SpeechBubbleField } from "./Article/SpeechBubbleField";
 export { Top } from "./Article/Top";
 export { ArticleList } from "./ArticleList";
 export { Card } from "./Card";
+export { Recommend } from "./Recommend";
