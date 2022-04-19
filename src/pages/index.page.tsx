@@ -10,7 +10,7 @@ const Index: CustomNextPage = () => {
     router.push("/article/list");
   }, [router]);
 
-  return <div></div>;
+  return <div>Loding...</div>;
 };
 
 Index.getLayout = Layout;
